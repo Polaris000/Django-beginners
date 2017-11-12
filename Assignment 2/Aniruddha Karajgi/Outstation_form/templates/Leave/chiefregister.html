@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'Leave/form-template.html' %}
+        <button type="submit">Apply for Leave site</button>
+    </form>
+</body>
+</html>

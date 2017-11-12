@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body>
+    <form action="{% url 'Leave:login_view' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        Username:
+        <input type="text" name="username" value="" id="username" size="50"><br>
+
+        Password:
+        <input type="password" name="password" value="" id="password" size="50"><br>
+
+        <input type ="submit" name="submit" value="Login"><br><br>
+
+        {% if not user.is_authenticated %}
+            <b> You are not logged in</b>
+        {% else %}
+            <b> You are logged in</b>
+        {% endif %}
+
+
+
+    </form>
+</body>
+</html>

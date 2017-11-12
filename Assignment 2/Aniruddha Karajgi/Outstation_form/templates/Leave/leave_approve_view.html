@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APPROVE LEAVES</title>
+</head>
+<body>
+
+        {% if not user.is_authenticated %}
+            not logged in<br><br>
+            <a href="{% url 'Leave:login_view'%}">Login</a>
+
+
+        {% else %}
+            <p> You are in</p><br><br>
+
+
+            {% for leave in unapproved_leaves %}
+                {{ leave }}<br>
+
+                {% if leave.approval %}
+                    Approved<br><br>
+
+                {% endif %}
+
+                {% if not leave.approval %}
+                    Not Approved<br><br>
+                {% endif %}
+
+            {% endfor %}
+            <br><br>
+
+          <a href="{% url 'Leave:leave_approve_view' %}"> Approve leaves</a>
+          <a href="{% url 'Leave:logout_view' %}"> Logout</a>
+        {% endif %}
+
+</body>
+</html>
