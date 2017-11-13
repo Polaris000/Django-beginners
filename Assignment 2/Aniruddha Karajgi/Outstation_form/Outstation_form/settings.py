@@ -33,12 +33,19 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Leave.apps.LeaveConfig',
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
